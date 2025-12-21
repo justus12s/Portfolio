@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BONOU Mahuna Justus - Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --accent-color: #e74c3c;
+        --light-color: #ecf0f1;
+        --dark-color: #2c3e50;
+        --gradient: linear-gradient(135deg, #2f475f 0%, #3498db 100%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f9f9f9;
+      }
+
+      .navbar {
+        background-color: rgb(224, 209, 209);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 15px 0;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: var(--primary-color) !important;
+      }
+
+      .nav-link {
+        color: var(--primary-color) !important;
+        font-weight: 500;
+        margin: 0 10px;
+        transition: color 0.3s;
+      }
+
+      .nav-link:hover {
+        color: var(--secondary-color) !important;
+      }
+
+      .hero-section {
+        background: var(--gradient);
+        color: white;
+        padding: 100px 0 50px;
+        text-align: center;
+      }
+
+      .hero-section .lead {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .profile-img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        margin: 30px auto;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        color: var(--primary-color);
+        position: relative;
+        font-weight: 700;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        background-color: var(--secondary-color);
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .section-padding {
+        padding: 100px 0;
+      }
+
+      .about-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        padding: 10px;
+      }
+
+      .skill-item {
+        margin-bottom: 20px;
+      }
+
+      .skill-name {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+      }
+
+      .skill-bar {
+        height: 10px;
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .skill-level {
+        height: 100%;
+        background: var(--gradient);
+        border-radius: 5px;
+      }
+
+      .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        height: 100%;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .card-body {
+        padding: 30px;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 15px;
+      }
+
+      .tech-badge {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        margin-right: 5px;
+        margin-bottom: 5px;
+      }
+
+      .contact-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--gradient);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-size: 1.2rem;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .social-link {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        font-size: 1.3rem;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+
+      .social-link:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-5px);
+        color: white;
+      }
+
+      footer {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 30px 0;
+        text-align: center;
+      }
+
+      .hobby-icon {
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 15px;
+      }
+
+      @media (max-width: 768px) {
+        .hero-section h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-section .lead {
+          font-size: 1.2rem;
+        }
+
+        .section-padding {
+          padding: 60px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="nav">
+      <div class="container">
+        <a class="navbar-brand" style="font-size: 20px" href="#nav"
+          >BONOU MAHUNA JUSTUS</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">À Propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Compétences</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Formation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="hero-section">
+      <div class="container position-relative">
+        <div class="row justify-content-center align-items-center g-3">
+          <div class="col-lg-6 text-center">
+            <div class="hero-image-wrapper position-relative">
+              <img
+                src="images/justus.jpg"
+                alt="BONOU Mahuna Justus"
+                class="img-fluid rounded-3 shadow-lg"
+                style="width: 400px; height: 500px"
+              />
+            </div>
+            <p class="lead">
+              Élève Ingénieur en Modélisation Mathématique, Développeur Web et
+              Python.
+            </p>
+          </div>
+          <hr class="d-lg-none border-3 opacity-100" />
+          <div class="col-lg-6 text-center">
+            <div class="row">
+              <div>
+                <p style="font-size: 30px; font-weight: 20px">
+                  Passionné par la modélisation mathématique, l'intelligence
+                  artificielle et le développement web. Je suis toujours à la
+                  recherche de nouveaux défis techniques et scientifiques.
+                </p>
+              </div>
+              <div class="d-flex gap-3 flex-wrap justify-content-center">
+                <a
+                  href="#contact"
+                  class="btn btn-light btn-lg px-4 py-3 fw-semibold"
+                >
+                  <i class="fas fa-phone me-2"></i>Un projet? Contactez-moi
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- À Propos Section -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">À propos de moi</h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="about-text">
+              <p>
+                Je suis élève ingénieur en Modélisation Mathématique à l'Ecole
+                Nationale Supérieure des Génies Mathématiques et Modélisation de
+                l'UNSTIM Abomey. Passionné par les mathématiques appliquées et
+                l'informatique, je me spécialise dans le développement Python,
+                le Machine Learning et le Deep Learning.
+              </p>
+
+              <p>
+                En parallèle de mes études, je développe des compétences en
+                développement web full-stack avec PHP, JavaScript et les
+                frameworks associés. J'aime créer des solutions innovantes qui
+                allient modélisation mathématique et développement logiciel.
+              </p>
+
+              <p>
+                Dans mes temps libres, je pratique le basketball, le football et
+                je joue aux jeux vidéo. Ces activités me permettent de
+                développer mon esprit d'équipe, ma stratégie et ma persévérance.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="row mt-4 mt-lg-0">
+              <div class="col-6 text-center mb-4">
+                <div class="hobby-icon">
+                  <i class="fas fa-basketball-ball"></i>
+                </div>
+                <h5>Basketball</h5>
+                <p>Esprit d'équipe et stratégie</p>
+              </div>
+              <div class="col-6 text-center mb-4">
+                <div class="hobby-icon">
+                  <i class="fas fa-futbol"></i>
+                </div>
+                <h5>Football</h5>
+                <p>Collaboration et endurance</p>
+              </div>
+              <div class="col-6 text-center mb-4">
+                <div class="hobby-icon">
+                  <i class="fas fa-gamepad"></i>
+                </div>
+                <h5>Jeux Vidéo</h5>
+                <p>Résolution de problèmes</p>
+              </div>
+              <div class="col-6 text-center mb-4">
+                <div class="hobby-icon">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <h5>Machine Learning</h5>
+                <p>Passion principale</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compétences Section -->
+    <section
+      id="skills"
+      class="section-padding"
+      style="background-color: var(--light-color)"
+    >
+      <div class="container">
+        <h2 class="section-title">Mes Compétences</h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <h4 class="mb-4">Techniques</h4>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Python</span>
+                <span>75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 75%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Machine Learning / Deep Learning</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>PHP & CodeIgniter</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>HTML/CSS & Bootstrap</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 px-4 mt-5 mt-lg-0">
+            <h4 class="mb-4">Langages & Outils</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success"></i> Python (Avancé)
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success"></i> PHP
+                    (Intermédiaire)
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success"></i> HTML/CSS (Avancé)
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success"></i> MATLAB
+                    (Intermédiaire)
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success"></i> JavaScript
+                    (Débutant)
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success"></i> C (Débutant)
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success"></i> Fortran (Débutant)
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success"></i> Git & GitHub
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <h5>Frameworks & Librairies</h5>
+              <div class="project-tech mt-3">
+                <span class="tech-badge">TensorFlow / Keras</span>
+                <span class="tech-badge">Scikit-learn</span>
+                <span class="tech-badge">NumPy / Pandas</span>
+                <span class="tech-badge">Matplotlib/Seaborn</span>
+                <span class="tech-badge">CodeIgniter</span>
+                <span class="tech-badge">Bootstrap</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projets Section -->
+    <section id="projects" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">Mes Projets</h2>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Système de Recommandation</h4>
+                <p class="card-text">
+                  Développement d'un système de recommandation utilisant des
+                  algorithmes de Machine Learning pour prédire les préférences
+                  des utilisateurs.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-badge">Python</span>
+                  <span class="tech-badge">Scikit-learn</span>
+                  <span class="tech-badge">Pandas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">
+                  Système de gestion universitaire : E-learning
+                </h4>
+                <p class="card-text">
+                  Création d'une plateforme e-learning complète avec gestion des
+                  cours, inscriptions et système de suivie entière.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-badge">PHP</span>
+                  <span class="tech-badge">CodeIgniter</span>
+                  <span class="tech-badge">Bootstrap</span>
+                  <span class="tech-badge">MySQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">
+                  Modélisation et vision par ordinateur
+                </h4>
+                <p class="card-text">
+                  Implémentation de modèles mathématiques pour simuler la vision
+                  par ordinateur et la reconnaissance d'objets.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-badge">TensorFlow</span>
+                  <span class="tech-badge">NumPy</span>
+                  <span class="tech-badge">Matplotlib</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a
+            href="https://github.com/justus12s"
+            target="_blank"
+            class="btn btn-primary px-4 py-2"
+            style="border-radius: 30px"
+          >
+            <i class="fab fa-github"></i> Voir plus sur GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formation & Certifications -->
+    <section
+      id="education"
+      class="section-padding"
+      style="background-color: var(--light-color)"
+    >
+      <div class="container">
+        <h2 class="section-title">Formation & Certifications</h2>
+        <div class="row">
+          <div class="col-lg-4 mb-5">
+            <h4 class="mb-4">Formation Académique</h4>
+            <div class="card">
+              <div class="card-body">
+                <h5>Élève Ingénieur en Modélisation Mathématique</h5>
+                <p class="text-primary">
+                  <a
+                    href="https://ensgmm.unstim.bj/"
+                    target="_blank"
+                    style="text-decoration: none; color: #007bff"
+                    >ENSGMM UNSTIM-Abomey</a
+                  >
+                </p>
+                <p>
+                  Spécialisation en modélisation mathématique, analyse numérique
+                  et méthodes computationnelles appliquées aux sciences de
+                  l'ingénieur.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-5">
+            <h4 class="mb-4">Certifications</h4>
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5>Développement Web Full-Stack</h5>
+                <p class="text-primary">OpenClassrooms</p>
+                <p>
+                  Certification en développement web incluant HTML, CSS,
+                  JavaScript, PHP et gestion de bases de données.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-5">
+            <h4 class="mb-4">Auto-Formation</h4>
+            <div class="card">
+              <div class="card-body">
+                <h5>Python pour le Machine Learning</h5>
+                <p class="text-primary">
+                  OpenClassrooms, MachineLearnia et LeCoinStat
+                </p>
+                <p>
+                  Formation avancée en Python appliqué au Machine Learning, Deep
+                  Learning et traitement des données.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">Contactez-moi</h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="contact-info">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h5>Email</h5>
+                <a
+                  href="mailto:justusbonou@gmail.com"
+                  style="text-decoration: none; color: #333; font-size: 1rem"
+                >
+                  <span>justusbonou@gmail.com</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-info">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h5>Téléphone</h5>
+                <a
+                  href="tel:+229 0151562862"
+                  style="text-decoration: none; color: #333; font-size: 1rem"
+                >
+                  <span>+229 0151562862</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-info">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h5>Localisation</h5>
+                <p>Abomey, Bénin</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-5 mt-lg-0">
+            <h4 class="mb-4">Disponible pour des opportunités</h4>
+            <p>
+              Je suis actuellement à la recherche de stages, projets de fin
+              d'études ou collaborations dans les domaines de la modélisation
+              mathématique, du Machine Learning ou du développement web.
+            </p>
+
+            <div class="social-links">
+              <a
+                href="https://github.com/justus12s"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/mahuna-justus-bonou-1362aa380"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="mailto:justusbonou@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a
+                href="https://wa.me/2290151562862"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/justus.bonou.2025"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container" style="font-size: 1rem">
+        <p class="lead">
+          &copy; 2025 BONOU Mahuna Justus. Tous droits réservés.
+        </p>
+        <p class="lead">
+          Changeons le monde avec des innovations mathématiques et
+          technologiques.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Smooth scrolling pour les ancres
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Animation pour les barres de compétences
+      function animateSkills() {
+        const skillBars = document.querySelectorAll(".skill-level");
+        skillBars.forEach((bar) => {
+          const width = bar.style.width;
+          bar.style.width = "0";
+          setTimeout(() => {
+            bar.style.transition = "width 1.5s ease-in-out";
+            bar.style.width = width;
+          }, 300);
+        });
+      }
+
+      // Observer pour déclencher l'animation des compétences
+      const observerOptions = {
+        threshold: 0.5,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateSkills();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      const skillsSection = document.getElementById("skills");
+      if (skillsSection) {
+        observer.observe(skillsSection);
+      }
+    </script>
+  </body>
+</html>
