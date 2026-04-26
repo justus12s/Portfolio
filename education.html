@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BONOU Mahuna Justus — Portfolio</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&amp;family=DM+Sans:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+
+<link href="css/style.css" rel="stylesheet"/></head>
+<body>
+<div id="scroll-bar"></div>
+
+    <!-- ═══ ORBES GLOBALES ═══════════════════════════ -->
+    <div class="global-orbs">
+      <div class="orb" style="width: 500px; height: 500px; top: -100px; right: -80px; animation-duration: 14s;"></div>
+      <div class="orb" style="width: 300px; height: 300px; bottom: 60px; left: 5%; animation-duration: 19s; animation-delay: -6s;"></div>
+    </div>
+
+<nav id="navbar">
+<div class="nav-inner">
+<a class="brand" href="index.html">BMJ</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="about.html">À propos</a></li>
+<li><a href="about.html#skills">Compétences</a></li>
+<li><a href="projects.html">Projets</a></li>
+<li><a href="education.html">Formation</a></li>
+<li><a href="education.html#certificates">Certificats</a></li>
+<li><a href="contact.html">CV</a></li>
+<li><a href="contact.html#contact">Contact</a></li>
+</ul>
+<button aria-label="Menu" class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div style='padding-top:100px'></div>
+<div class="edu-bg">
+<div class="edu-wrap" id="education">
+<p class="section-label">Parcours</p>
+<h2 class="section-heading">Formation &amp; Certifications</h2>
+<div class="edu-grid fade-up">
+<div class="edu-card stagger-child tilt">
+<div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+<h5>Élève Ingénieur — Modélisation Mathématique</h5>
+<p class="org">
+<a href="https://ensgmm.unstim.bj/" rel="noopener noreferrer" style="color: var(--gold); text-decoration: none" target="_blank">ENSGMM UNSTIM-Abomey</a>
+</p>
+<p>
+              Spécialisation en modélisation mathématique, analyse numérique et
+              méthodes computationnelles appliquées aux sciences de l'ingénieur.
+            </p>
+</div>
+<div class="edu-card stagger-child tilt">
+<div class="edu-icon"><i class="fas fa-certificate"></i></div>
+<h5>Développement Web Full-Stack</h5>
+<p class="org">OpenClassrooms</p>
+<p>
+              Certification en développement web incluant HTML, CSS, JavaScript,
+              PHP et gestion de bases de données.
+            </p>
+</div>
+<div class="edu-card stagger-child tilt">
+<div class="edu-icon"><i class="fas fa-robot"></i></div>
+<h5>Python pour le Machine Learning</h5>
+<p class="org">OpenClassrooms · MachineLearnia · LeCoinStat</p>
+<p>
+              Formation avancée en Python appliqué au machine learning, deep
+              learning et traitement des données.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<div class="section-divider"></div>
+
+<div class="section" id="certificates">
+<p class="section-label">Preuves</p>
+<h2 class="section-heading">Mes Certificats</h2>
+<p style="color: var(--muted); margin-bottom: 48px; font-size: 0.9rem">
+        Cliquez sur un certificat pour l'agrandir.
+      </p>
+<div class="certs-grid fade-up">
+<div class="cert-card stagger-child" onclick="
+            openLightbox(
+              'images/Metiers_developpeur.png',
+              'Métiers de développeur — OpenClassrooms',
+            )
+          " onkeydown="if(event.key==='Enter'||event.key===' ') { this.click(); event.preventDefault(); }" role="button" tabindex="0">
+<div style="overflow: hidden; height: 180px">
+<img alt="Certificat de réussite" class="cert-thumb" loading="lazy" onerror="
+                this.parentElement.innerHTML =
+                  '&lt;div class=\'cert-placeholder\'&gt;&lt;i class=\'fas fa-award\'&gt;&lt;/i&gt;&lt;span&gt;Ajoutez images/Metiers_developpeur.png&lt;/span&gt;&lt;/div&gt;'
+              " src="images/Metiers_developpeur.png"/>
+<div class="cert-overlay"><i class="fas fa-expand-alt"></i></div>
+</div>
+<div class="cert-info">
+<h5>Métiers de développeur</h5>
+<span>OpenClassrooms</span>
+</div>
+</div>
+<div class="cert-card stagger-child" onclick="
+            openLightbox(
+              'images/base_python.png',
+              'Python pour le Machine Learning — OpenClassrooms',
+            )
+          " onkeydown="if(event.key==='Enter'||event.key===' ') { this.click(); event.preventDefault(); }" role="button" tabindex="0">
+<div style="overflow: hidden; height: 180px">
+<img alt="Certificat de réussite" class="cert-thumb" loading="lazy" onerror="
+                this.parentElement.innerHTML =
+                  '&lt;div class=\'cert-placeholder\'&gt;&lt;i class=\'fas fa-award\'&gt;&lt;/i&gt;&lt;span&gt;Ajoutez images/base_python.png&lt;/span&gt;&lt;/div&gt;'
+              " src="images/base_python.png"/>
+<div class="cert-overlay"><i class="fas fa-expand-alt"></i></div>
+</div>
+<div class="cert-info">
+<h5>Python pour le Machine Learning</h5>
+<span>OpenClassrooms</span>
+</div>
+</div>
+<div class="cert-card stagger-child" onclick="openLightbox('images/Web.png', 'Certificat 3')" onkeydown="if(event.key==='Enter'||event.key===' ') { this.click(); event.preventDefault(); }" role="button" tabindex="0">
+<div style="overflow: hidden; height: 180px">
+<img alt="Certificat de réussite" class="cert-thumb" loading="lazy" onerror="
+                this.parentElement.innerHTML =
+                  '&lt;div class=\'cert-placeholder\'&gt;&lt;i class=\'fas fa-award\'&gt;&lt;/i&gt;&lt;span&gt;Ajoutez images/Web.png&lt;/span&gt;&lt;/div&gt;'
+              " src="images/Web.png"/>
+<div class="cert-overlay"><i class="fas fa-expand-alt"></i></div>
+</div>
+<div class="cert-info">
+<h5>Comprendre le Web</h5>
+<span>OpenClassrooms</span>
+</div>
+</div>
+<div class="cert-card stagger-child" onclick="openLightbox('images/SQL.png', 'Certificat 4')" onkeydown="if(event.key==='Enter'||event.key===' ') { this.click(); event.preventDefault(); }" role="button" tabindex="0">
+<div style="overflow: hidden; height: 180px">
+<img alt="Certificat de réussite" class="cert-thumb" loading="lazy" onerror="
+                this.parentElement.innerHTML =
+                  '&lt;div class=\'cert-placeholder\'&gt;&lt;i class=\'fas fa-award\'&gt;&lt;/i&gt;&lt;span&gt;Ajoutez images/SQL.png&lt;/span&gt;&lt;/div&gt;'
+              " src="images/SQL.png"/>
+<div class="cert-overlay"><i class="fas fa-expand-alt"></i></div>
+</div>
+<div class="cert-info">
+<h5>SQL pour la Data Science</h5>
+<span>OpenClassrooms</span>
+</div>
+</div>
+<div class="cert-card stagger-child" onclick="openLightbox('images/HTML_CSS.png', 'Certificat 5')" onkeydown="if(event.key==='Enter'||event.key===' ') { this.click(); event.preventDefault(); }" role="button" tabindex="0">
+<div style="overflow: hidden; height: 180px">
+<img alt="Certificat de réussite" class="cert-thumb" loading="lazy" onerror="
+                this.parentElement.innerHTML =
+                  '&lt;div class=\'cert-placeholder\'&gt;&lt;i class=\'fas fa-award\'&gt;&lt;/i&gt;&lt;span&gt;Ajoutez images/HTML_CSS.png&lt;/span&gt;&lt;/div&gt;'
+              " src="images/HTML_CSS.png"/>
+<div class="cert-overlay"><i class="fas fa-expand-alt"></i></div>
+</div>
+<div class="cert-info">
+<h5>HTML5 et CSS3</h5>
+<span>OpenClassrooms</span>
+</div>
+</div>
+<div class="cert-card stagger-child" onclick="openLightbox('images/PHP_SQL.png', 'Certificat 6')" onkeydown="if(event.key==='Enter'||event.key===' ') { this.click(); event.preventDefault(); }" role="button" tabindex="0">
+<div style="overflow: hidden; height: 180px">
+<img alt="Certificat de réussite" class="cert-thumb" loading="lazy" onerror="
+                this.parentElement.innerHTML =
+                  '&lt;div class=\'cert-placeholder\'&gt;&lt;i class=\'fas fa-award\'&gt;&lt;/i&gt;&lt;span&gt;Ajoutez images/PHP_SQL.png&lt;/span&gt;&lt;/div&gt;'
+              " src="images/PHP_SQL.png"/>
+<div class="cert-overlay"><i class="fas fa-expand-alt"></i></div>
+</div>
+<div class="cert-info">
+<h5>PHP et SQL pour des sites dynamiques</h5>
+<span>OpenClassrooms</span>
+</div>
+</div>
+<div class="cert-card stagger-child" onclick="openLightbox('images/bootsrap.png', 'Certificat 7')" onkeydown="if(event.key==='Enter'||event.key===' ') { this.click(); event.preventDefault(); }" role="button" tabindex="0">
+<div style="overflow: hidden; height: 180px">
+<img alt="Certificat de réussite" class="cert-thumb" loading="lazy" onerror="
+                this.parentElement.innerHTML =
+                  '&lt;div class=\'cert-placeholder\'&gt;&lt;i class=\'fas fa-award\'&gt;&lt;/i&gt;&lt;span&gt;Ajoutez images/bootsrap.png&lt;/span&gt;&lt;/div&gt;'
+              " src="images/bootsrap.png"/>
+<div class="cert-overlay"><i class="fas fa-expand-alt"></i></div>
+</div>
+<div class="cert-info">
+<h5>Bootstrap pour le style et la responsivité</h5>
+<span>OpenClassrooms</span>
+</div>
+</div>
+<div class="cert-card stagger-child" onclick="openLightbox('images/data_base.png', 'Certificat 8')" onkeydown="if(event.key==='Enter'||event.key===' ') { this.click(); event.preventDefault(); }" role="button" tabindex="0">
+<div style="overflow: hidden; height: 180px">
+<img alt="Certificat de réussite" class="cert-thumb" loading="lazy" onerror="
+                this.parentElement.innerHTML =
+                  '&lt;div class=\'cert-placeholder\'&gt;&lt;i class=\'fas fa-award\'&gt;&lt;/i&gt;&lt;span&gt;Ajoutez images/data_base.png&lt;/span&gt;&lt;/div&gt;'
+              " src="images/data_base.png"/>
+<div class="cert-overlay"><i class="fas fa-expand-alt"></i></div>
+</div>
+<div class="cert-info">
+<h5>Conception de Bases de Données</h5>
+<span>OpenClassrooms</span>
+</div>
+</div>
+<div class="cert-card stagger-child" onclick="openLightbox('images/Git_Github.png', 'Certificat 9')" onkeydown="if(event.key==='Enter'||event.key===' ') { this.click(); event.preventDefault(); }" role="button" tabindex="0">
+<div style="overflow: hidden; height: 180px">
+<img alt="Certificat de réussite" class="cert-thumb" loading="lazy" onerror="
+                this.parentElement.innerHTML =
+                  '&lt;div class=\'cert-placeholder\'&gt;&lt;i class=\'fas fa-award\'&gt;&lt;/i&gt;&lt;span&gt;Ajoutez images/Git_Github.png&lt;/span&gt;&lt;/div&gt;'
+              " src="images/Git_Github.png"/>
+<div class="cert-overlay"><i class="fas fa-expand-alt"></i></div>
+</div>
+<div class="cert-info">
+<h5>Git et Github pour l'enregistrement de version</h5>
+<span>OpenClassrooms</span>
+</div>
+</div>
+<div class="cert-card stagger-child" onclick="openLightbox('images/Terminal.png', 'Certificat 10')" onkeydown="if(event.key==='Enter'||event.key===' ') { this.click(); event.preventDefault(); }" role="button" tabindex="0">
+<div style="overflow: hidden; height: 180px">
+<img alt="Certificat de réussite" class="cert-thumb" loading="lazy" onerror="
+                this.parentElement.innerHTML =
+                  '&lt;div class=\'cert-placeholder\'&gt;&lt;i class=\'fas fa-award\'&gt;&lt;/i&gt;&lt;span&gt;Ajoutez images/Terminal.png&lt;/span&gt;&lt;/div&gt;'
+              " src="images/Terminal.png"/>
+<div class="cert-overlay"><i class="fas fa-expand-alt"></i></div>
+</div>
+<div class="cert-info">
+<h5>Utilisation du Terminal</h5>
+<span>OpenClassrooms</span>
+</div>
+</div>
+<div class="cert-card stagger-child" onclick="
+            openLightbox('images/librairie_data_science.png', 'Certificat 11')
+          " onkeydown="if(event.key==='Enter'||event.key===' ') { this.click(); event.preventDefault(); }" role="button" tabindex="0">
+<div style="overflow: hidden; height: 180px">
+<img alt="Certificat de réussite" class="cert-thumb" loading="lazy" onerror="
+                this.parentElement.innerHTML =
+                  '&lt;div class=\'cert-placeholder\'&gt;&lt;i class=\'fas fa-award\'&gt;&lt;/i&gt;&lt;span&gt;Ajoutez images/librairie_data_science.png&lt;/span&gt;&lt;/div&gt;'
+              " src="images/librairie_data_science.png"/>
+<div class="cert-overlay"><i class="fas fa-expand-alt"></i></div>
+</div>
+<div class="cert-info">
+<h5>Librairies pour la Data Science</h5>
+<span>OpenClassrooms</span>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<p class="brand-foot">BONOU Mahuna Justus</p>
+<p>© 2025 · Tous droits réservés</p>
+<p style="margin-top: 8px">
+        Changeons le monde avec des innovations mathématiques et technologiques.
+      </p>
+</footer>
+<div id="lightbox">
+<button aria-label="Fermer" id="lb-close" onclick="closeLightbox()">
+<i class="fas fa-times"></i>
+</button>
+<img alt="" id="lb-img" src=""/>
+<p id="lb-caption"></p>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

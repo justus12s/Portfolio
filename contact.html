@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BONOU Mahuna Justus — Portfolio</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&amp;family=DM+Sans:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+
+<link href="css/style.css" rel="stylesheet"/></head>
+<body>
+<div id="scroll-bar"></div>
+
+    <!-- ═══ ORBES GLOBALES ═══════════════════════════ -->
+    <div class="global-orbs">
+      <div class="orb" style="width: 500px; height: 500px; top: -100px; right: -80px; animation-duration: 14s;"></div>
+      <div class="orb" style="width: 300px; height: 300px; bottom: 60px; left: 5%; animation-duration: 19s; animation-delay: -6s;"></div>
+    </div>
+
+<nav id="navbar">
+<div class="nav-inner">
+<a class="brand" href="index.html">BMJ</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="about.html">À propos</a></li>
+<li><a href="about.html#skills">Compétences</a></li>
+<li><a href="projects.html">Projets</a></li>
+<li><a href="education.html">Formation</a></li>
+<li><a href="education.html#certificates">Certificats</a></li>
+<li><a href="contact.html">CV</a></li>
+<li><a href="contact.html#contact">Contact</a></li>
+</ul>
+<button aria-label="Menu" class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div style='padding-top:100px'></div>
+<div class="section cv-section" id="cv">
+<p class="section-label">Téléchargement</p>
+<h2 class="section-heading">Mon CV</h2>
+<div class="cv-inner fade-up">
+<div class="cv-text">
+<p>
+            Mon curriculum vitae résume mon parcours académique, mes compétences
+            techniques et mes projets. Disponible en format PDF pour impression
+            ou envoi numérique.
+          </p>
+<p>
+            Je suis actuellement à la recherche de
+            <strong style="color: var(--gold)">stages, projets de fin d'études ou collaborations</strong>
+            dans les domaines de la modélisation mathématique, du machine
+            learning ou du développement web.
+          </p>
+<div class="cv-actions">
+<a class="btn-gold" download="" href="certife/CV.pdf">
+<i class="fas fa-download"></i>Télécharger le CV
+            </a>
+<a class="btn-outline-gold" href="certife/CV.pdf" rel="noopener noreferrer" target="_blank">
+<i class="fas fa-eye"></i>Aperçu
+            </a>
+</div>
+</div>
+<div class="cv-preview-frame">
+<img alt="Aperçu CV" loading="lazy" onerror="
+              this.style.display = 'none';
+              this.nextElementSibling.style.display = 'flex';
+            " src="images/CV.png"/>
+<div class="cv-badge">CV — 2025</div>
+</div>
+</div>
+</div>
+<div class="section-divider"></div>
+
+<div class="section" id="contact">
+<p class="section-label">Parlons-nous</p>
+<h2 class="section-heading">Contactez-moi</h2>
+<div class="contact-grid fade-up">
+<div>
+<div class="contact-item">
+<div class="contact-icon-box"><i class="fas fa-envelope"></i></div>
+<div>
+<h5>Email</h5>
+<a href="mailto:justusbonou@gmail.com">justusbonou@gmail.com</a>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon-box"><i class="fas fa-phone"></i></div>
+<div>
+<h5>Téléphone</h5>
+<a href="tel:+22901515628622">+229 01 51 56 28 62</a>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon-box">
+<i class="fas fa-map-marker-alt"></i>
+</div>
+<div>
+<h5>Localisation</h5>
+<p>Abomey, Bénin</p>
+</div>
+</div>
+</div>
+<div class="availability-box">
+<p class="avail-title">
+<span class="dot"></span>Disponible pour collaboration
+          </p>
+<p class="avail-text">
+            Je suis actuellement à la recherche de stages, projets de fin
+            d'études ou collaborations dans les domaines de la modélisation
+            mathématique, du machine learning ou du développement web.
+          </p>
+<div class="socials">
+<a class="social-btn" href="https://github.com/justus12s" rel="noopener noreferrer" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+<a class="social-btn" href="https://www.linkedin.com/in/mahuna-justus-bonou-1362aa380" rel="noopener noreferrer" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+<a class="social-btn" href="mailto:justusbonou@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+<a class="social-btn" href="https://wa.me/22901515628622" rel="noopener noreferrer" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a class="social-btn" href="https://www.facebook.com/justus.bonou.2025" rel="noopener noreferrer" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<p class="brand-foot">BONOU Mahuna Justus</p>
+<p>© 2025 · Tous droits réservés</p>
+<p style="margin-top: 8px">
+        Changeons le monde avec des innovations mathématiques et technologiques.
+      </p>
+</footer>
+<div id="lightbox">
+<button aria-label="Fermer" id="lb-close" onclick="closeLightbox()">
+<i class="fas fa-times"></i>
+</button>
+<img alt="" id="lb-img" src=""/>
+<p id="lb-caption"></p>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
