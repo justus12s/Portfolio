@@ -1039,16 +1039,59 @@
       }
       @media (max-width: 600px) {
         .projects-grid,
-        .edu-grid {
+        .edu-grid,
+        .hobbies-grid {
           grid-template-columns: 1fr;
         }
         .hero-stats {
-          gap: 24px;
+          gap: 16px;
+          flex-wrap: wrap;
         }
         .section,
         .skills-wrap,
         .edu-wrap {
-          padding: 72px 20px;
+          padding: 60px 16px;
+        }
+        .hero-title {
+          word-wrap: break-word;
+          font-size: 0.9rem;
+        }
+        .hero-photo-frame::before {
+          inset: -8px;
+        }
+        .hero-photo-frame::after {
+          bottom: -12px;
+          right: -12px;
+        }
+        .tag {
+          word-break: break-word;
+        }
+        .project-card {
+          padding: 24px 16px;
+        }
+        .edu-card h5 {
+          font-size: 1.05rem;
+        }
+        .edu-icon {
+          margin-bottom: 12px;
+        }
+        .cv-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .cv-actions .btn-gold,
+        .cv-actions .btn-outline-gold {
+          width: 100%;
+          justify-content: center;
+        }
+        .cv-preview-frame img,
+        .cv-preview-placeholder {
+          height: 250px;
+        }
+        .social-btn {
+          width: 48px;
+          height: 48px;
+          font-size: 1.2rem;
         }
       }
 
