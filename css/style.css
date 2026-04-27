@@ -674,10 +674,12 @@ body::after {
 }
 #lightbox.open { opacity: 1; pointer-events: all; }
 #lightbox img {
-  max-width: 90vw; max-height: 85vh;
+  max-width: 90vw;
+  max-height: 85vh;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  border: 1px solid var(--border);
-  box-shadow: 0 40px 100px rgba(0,0,0,0.7), 0 0 40px rgba(6,182,212,0.15);
+  border-radius: 8px;
   transform: scale(0.95);
   transition: transform 0.4s var(--ease-out);
 }
@@ -914,48 +916,7 @@ body.page-leave { animation: pageLeave 0.45s var(--ease-in) forwards; }
 }
 .global-orbs { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
 
-/* ─── CUSTOM CURSOR ──────────────────────────────────────── */
-body { cursor: none; }
-a, button, input, textarea, .magnetic { cursor: none; }
-#custom-cursor {
-  position: fixed;
-  width: 32px; height: 32px;
-  border: 1.5px solid rgba(6,182,212,0.6);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transition: width 0.35s var(--ease-out), height 0.35s var(--ease-out),
-              background-color 0.35s, box-shadow 0.35s, border-color 0.35s;
-  will-change: transform;
-  box-shadow: 0 0 12px rgba(6,182,212,0.2);
-  top: 0; left: 0;
-}
-#custom-cursor.hovered {
-  width: 60px; height: 60px;
-  background-color: rgba(6,182,212,0.08);
-  border-color: rgba(6,182,212,0.9);
-  box-shadow: 0 0 24px rgba(6,182,212,0.5);
-}
-#custom-cursor-dot {
-  position: fixed;
-  width: 6px; height: 6px;
-  background: var(--gold);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  box-shadow: 0 0 8px var(--gold);
-  top: -3px; left: -3px;
-}
-.cursor-trail {
-  position: fixed;
-  width: 6px; height: 6px;
-  background: var(--gold2);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9997;
-  top: -3px; left: -3px;
-  mix-blend-mode: screen;
-}
+
 
 /* ─── SECTION DIVIDER GLOW ───────────────────────────────── */
 
@@ -993,8 +954,7 @@ a, button, input, textarea, .magnetic { cursor: none; }
   .cv-actions { flex-direction: column; align-items: stretch; }
   .cv-actions .btn-gold, .cv-actions .btn-outline-gold { width: 100%; justify-content: center; }
   .cv-preview-frame img { height: 260px; }
-  #custom-cursor, #custom-cursor-dot, .cursor-trail { display: none; }
-  body, a, button, input, textarea, .magnetic { cursor: auto; }
+
   .section-heading .heading-bg-num { display: none; }
 }
 

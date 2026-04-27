@@ -282,57 +282,7 @@ document.querySelectorAll('a[href]').forEach(a => {
   }
 });
  
-// ─── CUSTOM CURSOR WITH SMOOTH TRAIL ─────────────────────────
-const isMobile = window.matchMedia('(max-width: 620px)').matches;
-if (!isMobile) {
-  const cursorRing = document.createElement('div');
-  cursorRing.id = 'custom-cursor';
-  document.body.appendChild(cursorRing);
- 
-  const cursorDot = document.createElement('div');
-  cursorDot.id = 'custom-cursor-dot';
-  document.body.appendChild(cursorDot);
- 
-  // Trail dots
-  const TRAIL = 7;
-  const trailDots = Array.from({ length: TRAIL }, (_, i) => {
-    const d = document.createElement('div');
-    d.className = 'cursor-trail';
-    d.style.cssText = `opacity:${(1 - i / TRAIL) * 0.35}`;
-    document.body.appendChild(d);
-    return { el: d, x: window.innerWidth / 2, y: window.innerHeight / 2 };
-  });
- 
-  let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-  let cx = mx, cy = my;
- 
-  window.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursorDot.style.transform = `translate(${mx}px, ${my}px)`;
-  });
- 
-  (function animCursor() {
-    cx += (mx - cx) * 0.13;
-    cy += (my - cy) * 0.13;
-    cursorRing.style.transform = `translate(${cx - 16}px, ${cy - 16}px)`;
- 
-    trailDots[0].x += (mx - trailDots[0].x) * 0.3;
-    trailDots[0].y += (my - trailDots[0].y) * 0.3;
-    for (let i = 1; i < TRAIL; i++) {
-      trailDots[i].x += (trailDots[i - 1].x - trailDots[i].x) * 0.28;
-      trailDots[i].y += (trailDots[i - 1].y - trailDots[i].y) * 0.28;
-      trailDots[i].el.style.left = trailDots[i].x + 'px';
-      trailDots[i].el.style.top  = trailDots[i].y + 'px';
-    }
-    requestAnimationFrame(animCursor);
-  })();
- 
-  document.querySelectorAll('a, button, .project-card, .edu-card, .hobby-card, .magnetic, input, textarea, .cert-card, .social-btn').forEach(el => {
-    el.addEventListener('mouseenter', () => cursorRing.classList.add('hovered'));
-    el.addEventListener('mouseleave', () => cursorRing.classList.remove('hovered'));
-  });
-}
- 
+
 // ─── MARQUEE STRIP — inject between hero and about ────────────
 function injectMarquee() {
   const heroSection = document.getElementById('hero');
