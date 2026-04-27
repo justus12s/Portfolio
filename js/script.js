@@ -301,3 +301,38 @@ document.querySelectorAll('a[href]').forEach(a => {
     });
   }
 });
+
+// ----- CUSTOM CURSOR -----
+const cursor = document.createElement("div");
+cursor.id = "custom-cursor";
+document.body.appendChild(cursor);
+
+const cursorDot = document.createElement("div");
+cursorDot.id = "custom-cursor-dot";
+document.body.appendChild(cursorDot);
+
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+let cursorX = mouseX;
+let cursorY = mouseY;
+
+window.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+});
+
+function animateCursor() {
+  const dx = mouseX - cursorX;
+  const dy = mouseY - cursorY;
+  cursorX += dx * 0.15;
+  cursorY += dy * 0.15;
+  cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+  requestAnimationFrame(animateCursor);
+}
+requestAnimationFrame(animateCursor);
+
+document.querySelectorAll('a, button, .project-card, .edu-card, .hobby-card, .magnetic, input, textarea').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+});

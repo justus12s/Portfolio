@@ -8,18 +8,18 @@
         box-sizing: border-box;
       }
       :root {
-        --navy: #0d1b2a;
-        --navy2: #122236;
-        --gold: #c9a84c;
-        --gold2: #e2c97e;
+        --navy: #09090b;
+        --navy2: #18181b;
+        --gold: #06b6d4;
+        --gold2: #22d3ee;
         --cream: #f5f0e8;
         --white: #ffffff;
         --muted: #8a9bb0;
-        --border: rgba(201, 168, 76, 0.2);
+        --border: rgba(6, 182, 212, 0.2);
         --card-bg: rgba(255, 255, 255, 0.04);
-        --ff-head: "Cormorant Garamond", Georgia, serif;
-        --ff-body: "DM Sans", sans-serif;
-        --ff-mono: "Space Mono", monospace;
+        --ff-head: "Inter", Georgia, serif;
+        --ff-body: "Inter", sans-serif;
+        --ff-mono: "Fira Code", monospace;
         --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
@@ -46,15 +46,26 @@
         border-radius: 2px;
       }
 
-      /* ─── NOISE OVERLAY ────────────────────────────── */
+      /* ─── PRO GRID OVERLAY ─────────────────────────── */
       body::before {
         content: "";
         position: fixed;
         inset: 0;
         pointer-events: none;
         z-index: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.04'/%3E%3C/svg%3E");
-        opacity: 0.4;
+        background-image: 
+          linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.8;
+      }
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background: radial-gradient(circle at 50% 50%, rgba(9, 9, 11, 0) 0%, rgba(9, 9, 11, 1) 100%);
       }
 
       /* ─── NAVBAR ───────────────────────────────────── */
@@ -65,8 +76,9 @@
         width: 100%;
         z-index: 900;
         padding: 18px 0;
-        background: rgba(13, 27, 42, 0.92);
-        backdrop-filter: blur(16px);
+        background: rgba(9, 9, 11, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         border-bottom: 1px solid var(--border);
         transition: padding var(--transition);
       }
@@ -182,7 +194,10 @@
       }
       .hero-name em {
         font-style: normal;
-        color: var(--gold);
+        background: linear-gradient(90deg, #06b6d4, #22d3ee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 24px rgba(6, 182, 212, 0.4);
       }
       .hero-title {
         font-size: 1rem;
@@ -362,7 +377,7 @@
       }
       .hobby-card:hover {
         border-color: var(--gold);
-        background: rgba(201, 168, 76, 0.06);
+        background: rgba(6, 182, 212, 0.06);
       }
       .hobby-card i {
         font-size: 1.8rem;
@@ -442,7 +457,7 @@
         transition: var(--transition);
       }
       .badge:hover {
-        background: rgba(201, 168, 76, 0.1);
+        background: rgba(6, 182, 212, 0.1);
         border-color: var(--gold);
       }
       .tools-col {
@@ -481,6 +496,8 @@
         transition: var(--transition);
         position: relative;
         overflow: hidden;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
       }
       .project-card::before {
         content: "";
@@ -499,8 +516,10 @@
         transition: transform var(--transition);
       }
       .project-card:hover {
-        border-color: rgba(201, 168, 76, 0.5);
+        border-color: rgba(6, 182, 212, 0.5);
         transform: translateY(-6px);
+        box-shadow: 0 10px 40px -10px rgba(6, 182, 212, 0.2);
+        background: rgba(255, 255, 255, 0.05);
       }
       .project-card:hover::before {
         transform: scaleX(1);
@@ -530,7 +549,7 @@
       }
       .tag {
         padding: 4px 10px;
-        background: rgba(201, 168, 76, 0.1);
+        background: rgba(6, 182, 212, 0.1);
         font-size: 0.72rem;
         color: var(--gold);
         letter-spacing: 0.06em;
@@ -575,9 +594,13 @@
         border: 1px solid var(--border);
         padding: 36px 28px;
         transition: var(--transition);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
       }
       .edu-card:hover {
         border-color: var(--gold);
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-6px);
       }
       .edu-icon {
         width: 44px;
@@ -643,7 +666,7 @@
       .cert-overlay {
         position: absolute;
         inset: 0;
-        background: rgba(13, 27, 42, 0.7);
+        background: rgba(9, 9, 11, 0.7);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -659,7 +682,7 @@
       }
       .cert-info {
         padding: 18px 20px;
-        background: rgba(18, 34, 54, 0.95);
+        background: rgba(24, 24, 27, 0.95);
       }
       .cert-info h5 {
         font-size: 0.9rem;
@@ -681,14 +704,14 @@
         gap: 10px;
         background: linear-gradient(
           135deg,
-          rgba(201, 168, 76, 0.08),
-          rgba(13, 27, 42, 0.5)
+          rgba(6, 182, 212, 0.08),
+          rgba(9, 9, 11, 0.5)
         );
         border-bottom: 1px solid var(--border);
       }
       .cert-placeholder i {
         font-size: 2.5rem;
-        color: rgba(201, 168, 76, 0.4);
+        color: rgba(6, 182, 212, 0.4);
       }
       .cert-placeholder span {
         font-size: 0.75rem;
@@ -757,7 +780,7 @@
       .cv-section {
         background: linear-gradient(
           135deg,
-          rgba(201, 168, 76, 0.06) 0%,
+          rgba(6, 182, 212, 0.06) 0%,
           transparent 60%
         );
       }
@@ -819,7 +842,7 @@
         transition: var(--transition);
       }
       .btn-outline-gold:hover {
-        background: rgba(201, 168, 76, 0.1);
+        background: rgba(6, 182, 212, 0.1);
       }
       .cv-preview-frame {
         border: 1px solid var(--border);
@@ -845,13 +868,13 @@
         gap: 16px;
         background: linear-gradient(
           135deg,
-          rgba(201, 168, 76, 0.05),
-          rgba(13, 27, 42, 0.8)
+          rgba(6, 182, 212, 0.05),
+          rgba(9, 9, 11, 0.8)
         );
       }
       .cv-preview-placeholder i {
         font-size: 4rem;
-        color: rgba(201, 168, 76, 0.3);
+        color: rgba(6, 182, 212, 0.3);
       }
       .cv-preview-placeholder p {
         font-size: 0.85rem;
@@ -1025,7 +1048,7 @@
           top: 100%;
           left: 0;
           right: 0;
-          background: rgba(13, 27, 42, 0.98);
+          background: rgba(9, 9, 11, 0.98);
           padding: 24px 32px;
           border-top: 1px solid var(--border);
           gap: 20px;
@@ -1128,7 +1151,7 @@
         pointer-events: none;
         background: radial-gradient(
           circle,
-          rgba(201, 168, 76, 0.18) 0%,
+          rgba(6, 182, 212, 0.18) 0%,
           transparent 70%
         );
         animation: drift linear infinite;
@@ -1229,7 +1252,7 @@
         }
         50% {
           opacity: 1;
-          box-shadow: 0 0 16px rgba(201, 168, 76, 0.6);
+          box-shadow: 0 0 16px rgba(6, 182, 212, 0.6);
         }
         100% {
           opacity: 0.6;
@@ -1263,7 +1286,7 @@ body.page-leave {
 
 /* Hover glow effects */
 .project-card:hover, .edu-card:hover, .hobby-card:hover {
-  box-shadow: 0 10px 40px -10px rgba(201, 168, 76, 0.3);
+  box-shadow: 0 10px 40px -10px rgba(6, 182, 212, 0.3);
   transform: translateY(-8px) scale(1.02);
   border-color: var(--gold);
 }
@@ -1294,7 +1317,7 @@ body.page-leave {
 }
 .nav-links a:hover, .nav-links a.active {
   color: var(--gold) !important;
-  text-shadow: 0 0 8px rgba(201, 168, 76, 0.6);
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
 }
 
 .global-orbs {
@@ -1303,4 +1326,58 @@ body.page-leave {
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+}
+
+/* ─── CUSTOM CURSOR ──────────────────────────────── */
+body {
+  cursor: none; /* Hide default cursor */
+}
+
+a, button, input, textarea, .magnetic {
+  cursor: none; /* Hide default cursor on interactive elements too */
+}
+
+#custom-cursor {
+  position: fixed;
+  top: -16px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(6, 182, 212, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.3s, height 0.3s, background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+}
+#custom-cursor.hovered {
+  width: 64px;
+  height: 64px;
+  top: -32px;
+  left: -32px;
+  background-color: rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.8);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+}
+#custom-cursor-dot {
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background-color: #06b6d4;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  box-shadow: 0 0 8px #06b6d4;
+  transition: transform 0.05s linear;
+}
+
+@media (max-width: 900px) {
+  #custom-cursor, #custom-cursor-dot {
+    display: none;
+  }
+  body, a, button, input, textarea, .magnetic {
+    cursor: auto;
+  }
 }
