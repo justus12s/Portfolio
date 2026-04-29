@@ -668,22 +668,32 @@ body::after {
   z-index: 2000;
   background: rgba(0,0,0,0.93);
   backdrop-filter: blur(12px);
-  display: flex; align-items: center; justify-content: center;
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
   opacity: 0; pointer-events: none;
   transition: opacity 0.35s;
+  touch-action: none;
+  padding: 80px 24px 60px;
+  box-sizing: border-box;
 }
 #lightbox.open { opacity: 1; pointer-events: all; }
 #lightbox img {
-  max-width: 90vw;
-  max-height: 85vh;
+  display: block;
+  max-width: min(90vw, 900px);
+  max-height: 78vh;
   width: auto;
-  height: 80vh;
+  height: auto;
   object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  filter: drop-shadow(0 20px 60px rgba(0,0,0,0.5));
   transform: scale(0.95);
   transition: transform 0.4s var(--ease-out);
-  background-color: var(--navy2);
+  user-select: none;
+  -webkit-user-drag: none;
+  flex-shrink: 0;
 }
 #lightbox.open img { transform: scale(1); }
 #lb-close {
@@ -693,9 +703,14 @@ body::after {
   cursor: pointer; width: 46px; height: 46px;
   display: flex; align-items: center; justify-content: center;
   transition: var(--transition);
+  z-index: 1;
 }
 #lb-close:hover { border-color: var(--gold); color: var(--gold); transform: rotate(90deg); }
-#lb-caption { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); font-size: 0.78rem; color: var(--muted); letter-spacing: 0.08em; text-align: center; }
+#lb-caption {
+  font-size: 0.78rem; color: var(--muted);
+  letter-spacing: 0.08em; text-align: center;
+  max-width: 600px;
+}
 
 /* ─── CV SECTION ─────────────────────────────────────────── */
 .cv-section {
